@@ -7,7 +7,7 @@ import img3 from '../../../assets/home/banner/ban3.jpg'
 import img4 from '../../../assets/home/banner/ban4.jpg'
 const Banner = () => {
     return (
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-auto my-20">
             <Carousel autoPlay>
                 <div>
                     <img src={img1} />
