@@ -1,15 +1,22 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../pages/shared/Footer/Footer";
-import Navbar from "../pages/shared/Footer/Navbar/Navbar";
 import Layout from "./Layout";
+import Footer from "../pages/shared/Footer/Footer";
 
 const MainLayout = () => {
   return (
+    // <div>
+    //  <Layout>
+    //   <Outlet></Outlet>
+    //  </Layout>
+    // </div>
     <div>
-     <Layout>
-      <Outlet></Outlet>
-     </Layout>
+    <Layout>
+    <div className="pt-0 min-h-[calc(100vh-306px)]">
+      <Outlet />
     </div>
+    </Layout >
+    <Footer />
+  </div>
   );
 };
 
