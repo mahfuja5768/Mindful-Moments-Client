@@ -1,0 +1,29 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+
+.btn {
+  background: #fff;
+  padding: 5px;
+  width: 150px;
+  height: 35px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 1px solid #00598d;
+  margin-top: 25px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: 0.3s;
+  box-shadow: 0 50px #00598d inset;
+  color: #fff;
+
+  &:hover {
+    box-shadow:   #00598d inset 0 0;
+    color: #00598d;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

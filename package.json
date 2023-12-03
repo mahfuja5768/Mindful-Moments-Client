@@ -1,5 +1,5 @@
 {
-  "name": "Mindful-Moments",
+  "name": "mindful-moments",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -35,5 +35,10 @@
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5",
     "vite": "^4.4.5"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "postcss.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

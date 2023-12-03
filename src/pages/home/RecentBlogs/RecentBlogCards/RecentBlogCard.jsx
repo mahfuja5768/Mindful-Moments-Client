@@ -1,17 +1,17 @@
 import { FaCalendarDays, FaHeart, FaUser } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { addToWishlist } from "../../../../api/blogs";
+import CustomButton from "../../../shared/CustomButton/CustomButton";
 
 const RecentBlogCard = ({ blog }) => {
   // console.log(blog);
   const { author, date, image, likedCount, title, _id, description } = blog;
 
-  const handleToWishlist  = async(id)=>{
+  const handleToWishlist = async (id) => {
     // console.log('c',id)
-    const blogId = id
-    const res = await addToWishlist(blogId)
-     
-  }
+    const blogId = id;
+    const res = await addToWishlist(blogId);
+  };
 
   return (
     <div className="text-black shadow-lg cursor-pointer group">
@@ -59,14 +59,13 @@ const RecentBlogCard = ({ blog }) => {
               <span>{likedCount}</span>
             </h3>
           </div>
-          <div className="flex md:justify-between mt-6">
-            <button onClick={()=>handleToWishlist(_id)} className="btn hover:border-primary hover:text-primary hover:bg-transparent bg-primary text-white">
-              Add to wishlist
-            </button>
+          <div className="flex md:justify-between mt-6 gap-5">
+            <CustomButton
+              onClick={() => handleToWishlist(_id)}
+              text=" Add to wishlist"
+            ></CustomButton>
             <Link to={`/blog-details/${_id}`}>
-              <button  className="btn hover:border-primary hover:text-primary hover:bg-transparent bg-primary text-white">
-                Read More
-              </button>
+              <CustomButton text=" Read More"></CustomButton>
             </Link>
           </div>
         </div>
