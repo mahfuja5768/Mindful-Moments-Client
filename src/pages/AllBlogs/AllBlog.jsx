@@ -17,7 +17,6 @@ const AllBlog = ({ blog }) => {
           <img
             className=" w-full object-cover 
                     h-full 
-                    w-full 
                     group-hover:scale-110 
                     transition"
             src={image}

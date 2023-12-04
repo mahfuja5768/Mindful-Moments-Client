@@ -3,6 +3,8 @@ import Loader from "../shared/Loader/Loader";
 import { getAllBlogs } from "../../api/blogs";
 import AllBlog from "./AllBlog";
 import Container from "../shared/Container/Container";
+import SectionTitlee from "../shared/SectionTitle/SectionTitle";
+import SectionTitle from "../shared/SectionTitle/SectionTitle";
 
 const AllBlogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -26,7 +28,8 @@ const AllBlogs = () => {
   }
   return (
     <Container>
-      <div className="py-12 grid grid-cols-1 gap-8 mt-24">
+      <SectionTitle heading={'All Blogs'}></SectionTitle>
+      <div className="py-12 grid grid-cols-1 gap-12 mt-24">
         {blogs.map((blog) => (
           <AllBlog key={blog._id} blog={blog}></AllBlog>
         ))}

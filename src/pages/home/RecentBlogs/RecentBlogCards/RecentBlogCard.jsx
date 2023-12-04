@@ -1,16 +1,36 @@
 import { FaCalendarDays, FaHeart, FaUser } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { addToWishlist } from "../../../../api/blogs";
 import CustomButton from "../../../shared/CustomButton/CustomButton";
+import Swal from "sweetalert2";
+import useAuth from "../../../../components/hooks/useAuth";
 
 const RecentBlogCard = ({ blog }) => {
   // console.log(blog);
-  const { author, date, image, likedCount, title, _id, description } = blog;
-
+  const { author, date, image, likedCount, topics, title, _id } = blog;
+  const navigate = useNavigate();
+  const { user } = useAuth();
   const handleToWishlist = async (id) => {
-    // console.log('c',id)
-    const blogId = id;
-    const res = await addToWishlist(blogId);
+    // console.log("c", id);
+    const addBlog = {
+      author,
+      blogId: id,
+      date,
+      image,
+      likedCount,
+      topics,
+      title,
+      email: user?.email,
+    };
+    // console.log(addBlog);
+    const res = await addToWishlist(addBlog);
+    Swal.fire({
+      title: "Success!",
+      text: "Successfully added to wishlist!",
+      icon: "success",
+      confirmButtonText: "Done",
+    });
+    navigate("/wishlist");
   };
 
   return (
@@ -26,7 +46,6 @@ const RecentBlogCard = ({ blog }) => {
           <img
             className=" w-full object-cover 
                   h-full 
-                  w-full 
                   group-hover:scale-110 
                   transition"
             src={image}
@@ -34,8 +53,8 @@ const RecentBlogCard = ({ blog }) => {
           />
         </div>
         <div className="p-6">
-          <h2 className="text-3xl font-medium ">{title}</h2>
-          <p className="my-5">{description}</p>
+          <h2 className="text-3xl font-bold ">{title}</h2>
+          <p className="my-5 text-2xl font-medium">Topics: {topics}</p>
           <div className="grid md:grid-cols-3 gap-2">
             <h3 className="flex items-center gap-2">
               {" "}
@@ -60,10 +79,9 @@ const RecentBlogCard = ({ blog }) => {
             </h3>
           </div>
           <div className="flex md:justify-between mt-6 gap-5">
-            <CustomButton
-              onClick={() => handleToWishlist(_id)}
-              text=" Add to wishlist"
-            ></CustomButton>
+            <Link onClick={() => handleToWishlist(_id)}>
+              <CustomButton text=" Add to wishlist"></CustomButton>
+            </Link>
             <Link to={`/blog-details/${_id}`}>
               <CustomButton text=" Read More"></CustomButton>
             </Link>

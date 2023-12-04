@@ -16,8 +16,8 @@ body{
   &:hover,&:active{
     .top, .bottom{
       &:before, &:after{
-        margin-left: 200px;
-        transform-origin: -200px 50%;
+        margin-left: 500px;
+        transform-origin: -500px 50%;
         transition-delay:0s;
       }
     }

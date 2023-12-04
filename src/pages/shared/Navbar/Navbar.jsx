@@ -29,7 +29,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/login"
+          to="/add-blogs"
           className={({ isActive }) =>
             isActive
               ? " underline decoration-white bg-transparent hover:text-white hover:bg-transparent decoration-2 underline-offset-8"
@@ -41,7 +41,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/login"
+          to="/featured-blogs"
           className={({ isActive }) =>
             isActive
               ? " underline decoration-white bg-transparent hover:text-white hover:bg-transparent decoration-2 underline-offset-8"
@@ -53,7 +53,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/login"
+          to="/wishlist"
           className={({ isActive }) =>
             isActive
               ? " underline decoration-white bg-transparent hover:text-white hover:bg-transparent decoration-2 underline-offset-8"
