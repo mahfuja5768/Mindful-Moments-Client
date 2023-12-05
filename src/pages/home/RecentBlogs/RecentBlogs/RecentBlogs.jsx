@@ -50,8 +50,8 @@ const RecentBlogs = () => {
   return (
     <Container>
       <Title title={"Recent Posts"}></Title>
-      <div className="grid lg:grid-cols-6 mt-24 text-black justify-center items-start gap-5">
-        <div className=" col-span-4">
+      <div className="grid lg:grid-cols-6 my-12 text-black justify-center items-start gap-5">
+        <div className=" lg:col-span-4">
           <RecentBlogCards
             isLoading={isLoading}
             blogs={blogs}

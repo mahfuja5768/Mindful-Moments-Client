@@ -159,7 +159,7 @@ const AddNewBlog = () => {
             </div>
 
             <div>
-              <input type="submit" className="btn" value="Add Blog" />
+              <input type="submit" className="btn w-full" value="Add Blog" />
             </div>
           </form>
         </div>

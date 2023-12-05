@@ -34,10 +34,16 @@ export const getTopics = async () => {
   return data;
 };
 
-//get titles
+//add blog
 export const addNewBlog = async (blog) => {
   console.log(blog)
   const { data } = await axiosSecure.post('/add-new-blog', blog);
   console.log(data)
+  return data;
+};
+
+export const addReview = async (review) => {
+  const { data } = await axiosSecure.post("/reviews", review);
+  //   console.log(data)
   return data;
 };

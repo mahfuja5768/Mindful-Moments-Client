@@ -89,7 +89,7 @@ const Wishlists = () => {
                     <span>{item.likedCount}</span>
                   </h3>{" "}
                 </div>
-                <div className="flex md:flex-row flex-col gap-5 justify-between mb-4">
+                <div className="flex  gap-5 justify-between mb-4">
                   <Link to={`/blog-details/${item.blogId}`}>
                     <CustomButton text={"Details"}></CustomButton>
                   </Link>

@@ -9,7 +9,9 @@ const RecentBlogCard = ({ blog }) => {
   // console.log(blog);
   const { author, date, image, likedCount, topics, title, _id } = blog;
   const navigate = useNavigate();
+  
   const { user } = useAuth();
+
   const handleToWishlist = async (id) => {
     // console.log("c", id);
     const addBlog = {

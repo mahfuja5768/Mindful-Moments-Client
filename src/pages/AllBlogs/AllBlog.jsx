@@ -46,7 +46,11 @@ const AllBlog = ({ blog }) => {
               <span>
                 <FaHeart className="text-red-600" />
               </span>
-              <span>{likedCount}</span>
+              {!likedCount?.length ? (
+                <span>Likes:0</span>
+              ) : (
+                <span>Likes:{likedCount}</span>
+              )}{" "}
             </h3>
           </div>
           <div className="flex md:justify-end mt-6">

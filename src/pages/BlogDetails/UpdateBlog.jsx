@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Container from "../shared/Container/Container";
 import Swal from "sweetalert2";
 import { getTopics } from "../../api/blogs";
+import axiosSecure from "../../components/hooks/useAxiosSecure";
+import { imageUpload } from "../../api/utils";
 
 const UpdateBlog = () => {
   const blog = useLoaderData();
   const { id } = useParams();
+  const navigate = useNavigate()
   const {
     date,
     image,
     likedCount,
     title,
     _id,
+    author,
+    email,
     description,
     topics,
   } = blog;
@@ -48,17 +53,17 @@ const UpdateBlog = () => {
         description,
         date,
         image,
-        author: user?.displayName,
-        email: user?.email,
+        author,
+        email,
         topics,
       };
       console.log(newBlog);
 
-      const res = await addNewBlog(newBlog);
+      const res = await axiosSecure.put(`/update-blog/${_id}`, newBlog);
 
       Swal.fire({
         title: "Success!",
-        text: "New blog added successfully!",
+        text: "Blog updated successfully!",
         icon: "success",
         confirmButtonText: "Done",
       });
@@ -72,7 +77,7 @@ const UpdateBlog = () => {
       <div className="flex justify-center items-center my-12 mt-24 text-white">
         <div className="flex flex-col p-6 rounded-md sm:p-10 bg-secondary ">
           <div className="mb-8 text-center">
-            <h1 className="my-3 text-4xl font-bold">Add New Blog</h1>
+            <h1 className="my-3 text-4xl font-bold">Update Blog</h1>
             <p className="text-sm ">Welcome to Mindful-Moments</p>
           </div>
           <form
@@ -89,7 +94,7 @@ const UpdateBlog = () => {
                 >
                   Blog Title
                 </label>
-                <input d
+                <input defaultValue={title}
                   type="text"
                   name="title"
                   id="name"
@@ -104,7 +109,7 @@ const UpdateBlog = () => {
                   <span className="text-white text-sm">Topic Name</span>
                 </label>
                 <label>
-                  <select
+                  <select defaultValue={topics}
                     name="topics"
                     className="select select-bordered text-black"
                   >
@@ -122,7 +127,7 @@ const UpdateBlog = () => {
                 >
                   Description
                 </label>
-                <input
+                <input defaultValue={description}
                   type="text"
                   name="description"
                   id=""
@@ -139,7 +144,7 @@ const UpdateBlog = () => {
                     Date
                   </label>
                 </div>
-                <input
+                <input defaultValue={date}
                   type="date"
                   name="date"
                   id="date"
@@ -165,7 +170,7 @@ const UpdateBlog = () => {
             </div>
 
             <div>
-              <input type="submit" className="btn" value="Add Blog" />
+              <input type="submit" className="btn w-full" value="Update Blog" />
             </div>
           </form>
         </div>

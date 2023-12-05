@@ -4,7 +4,7 @@ import { toast } from "react-hot-toast";
 import { TbFidgetSpinner } from "react-icons/tb";
 import useAuth from "../../components/hooks/useAuth";
 import { imageUpload } from "../../api/utils";
-import { getToken, saveUser } from "../../api/auth";
+import { saveUser } from "../../api/auth";
 import Container from "../shared/Container/Container";
 import Swal from "sweetalert2";
 import style from "./Signup.module.css";
@@ -30,38 +30,48 @@ const SignUp = () => {
       const saveUserInfo = await saveUser(result?.user);
       console.log(saveUserInfo);
 
-      // //get token
-      await getToken(result?.user?.email);
-      navigate("/");
+      reset();
       Swal.fire({
         title: "Success!",
         text: "Successfully user created!",
         icon: "success",
         confirmButtonText: "Done",
       });
+      reset();
+      navigate("/");
     } catch (error) {
       console.log(error);
+      Swal.fire({
+        title: "Error!",
+        text: `${error.message}`,
+        icon: "error",
+        confirmButtonText: "Done",
+      });
+      reset();
     }
   };
 
   const handleGoogleSignIn = async () => {
     try {
       const result = await signInWithGoogle();
-      // console.log(result.user);
       const saveUserInfo = await saveUser(result?.user);
       console.log(saveUserInfo);
 
-      //get token
-      await getToken(result?.user?.email);
-      navigate("/");
       Swal.fire({
         title: "Success!",
-        text: "Successfully user created!",
+        text: "Successfully user logged in!",
         icon: "success",
         confirmButtonText: "Done",
       });
+      navigate("/");
     } catch (error) {
       console.log(error);
+      Swal.fire({
+        title: "Error!",
+        text: `${error.message}`,
+        icon: "error",
+        confirmButtonText: "Done",
+      });
     }
   };
 

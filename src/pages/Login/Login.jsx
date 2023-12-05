@@ -1,9 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import toast from "react-hot-toast";
 import { TbFidgetSpinner } from "react-icons/tb";
 import useAuth from "./../../components/hooks/useAuth";
-import { getToken } from "../../api/auth";
 import Container from "../shared/Container/Container";
 import Swal from "sweetalert2";
 
@@ -20,8 +18,6 @@ const Login = () => {
     try {
       const result = await signIn(email, password);
 
-      //get token
-      await getToken(result?.user?.email);
       navigate(from, { replace: true });
       Swal.fire({
         title: "Success!",
@@ -37,21 +33,24 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     try {
       const result = await signInWithGoogle();
-      // console.log(result.user);
       const saveUserInfo = await saveUser(result?.user);
       console.log(saveUserInfo);
 
-      //get token
-      await getToken(result?.user?.email);
-      navigate("/");
       Swal.fire({
         title: "Success!",
-        text: "Successfully logged in!",
+        text: "Successfully user logged in!",
         icon: "success",
         confirmButtonText: "Done",
       });
+      navigate("/");
     } catch (error) {
       console.log(error);
+      Swal.fire({
+        title: "Error!",
+        text: `${error.message}`,
+        icon: "error",
+        confirmButtonText: "Done",
+      });
     }
   };
 
