@@ -16,8 +16,8 @@ const NewsLetter = () => {
 
   return (
     <Container>
-      <div className=" my-24 flex justify-center flex-col items-center bg-[#f7f7f7] py-12">
-        <h2 className="text-primary text-xl font-bold md:text-2xl">Subscribe to newsletter</h2>
+      <div className=" my-24 flex justify-center flex-col items-center bg-[#f7f7f7] py-28">
+        <h2 className="text-primary text-xl mb-7 font-bold md:text-4xl">Subscribe to newsletter</h2>
         <div>
           <input type="text" className='bg-white input input-border border-2 me-2 border-primary' placeholder="Enter your email" />
           <Link onClick={handleSubscribe}>

@@ -5,22 +5,20 @@
 
 .btn {
   background: #fff;
-  padding: 5px;
-  width: 150px;
-  height: 40px;
+  padding: 10px 15px;
   font-size: 17px;
   font-weight: bold;
-  border: 1px solid #00598d;
+  border: 1px solid #044E98;
   margin-top: 25px;
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
-  box-shadow: 0 50px #00598d inset;
+  box-shadow: 0 50px #044E98 inset;
   color: #fff;
 
   &:hover {
-    box-shadow:   #00598d inset 0 0;
-    color: #00598d;
+    box-shadow:   #044E98 inset 0 0;
+    color: #044E98;
   }
 
   &:focus {

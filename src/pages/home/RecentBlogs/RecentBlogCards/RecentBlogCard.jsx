@@ -9,7 +9,7 @@ const RecentBlogCard = ({ blog }) => {
   // console.log(blog);
   const { author, date, image, likedCount, topics, title, _id } = blog;
   const navigate = useNavigate();
-  
+
   const { user } = useAuth();
 
   const handleToWishlist = async (id) => {
@@ -54,10 +54,10 @@ const RecentBlogCard = ({ blog }) => {
             alt=""
           />
         </div>
-        <div className="p-6">
+        <div className="p-6 w-full">
           <h2 className="text-3xl font-bold ">{title}</h2>
           <p className="my-5 text-2xl font-medium">Topics: {topics}</p>
-          <div className="grid md:grid-cols-3 gap-2">
+          <div className="flex justify-between items-center gap-2">
             <h3 className="flex items-center gap-2">
               {" "}
               <span>

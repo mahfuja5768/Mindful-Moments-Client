@@ -8,7 +8,7 @@ import CustomButton from "../../shared/CustomButton/CustomButton";
 const Banner = () => {
   return (
     <section
-      className="my-24 text-white pt-12 bg-fixed"
+      className="mb-24 mt-20 text-white py-24 bg-fixed "
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${img2})`,
         backgroundPosition: "center",
@@ -16,9 +16,6 @@ const Banner = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
-      data-aos-duration="3000"
-      data-aos="fade-up"
-      data-aos-anchor-placement="center-bottom"
     >
       <Container>
         <div className="flex flex-col lg:flew-row justify-center items-center gap-6 py-24 px-16 pt-12">

@@ -11,6 +11,7 @@ import Wishlists from "../pages/Wishlists/Wishlists";
 import AddNewBlog from "../pages/AddNewBlog/AddNewBlog";
 import PrivateRoute from "./PrivateRoute";
 import UpdateBlog from "../pages/BlogDetails/UpdateBlog";
+import FeaturedBlogs from "../pages/FeaturedBlogs/FeaturedBlogs";
 
 export const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/blog-details/:id",
-        element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <BlogDetails></BlogDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) => getSingleBlogs(params.id),
       },
       {
@@ -41,7 +46,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "/add-blogs",
-        element: <PrivateRoute><AddNewBlog></AddNewBlog></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AddNewBlog></AddNewBlog>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/featured-blogs",
+        element: (
+          <PrivateRoute>
+            <FeaturedBlogs />
+          </PrivateRoute>
+        ),
       },
       {
         path: "updateBlog/:id",

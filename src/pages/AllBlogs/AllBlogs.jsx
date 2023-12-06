@@ -29,7 +29,7 @@ const AllBlogs = () => {
   return (
     <Container>
       <SectionTitle heading={'All Blogs'}></SectionTitle>
-      <div className="py-12 grid grid-cols-1 gap-12 mt-24">
+      <div className="py-12 grid grid-cols-1 gap-12">
         {blogs.map((blog) => (
           <AllBlog key={blog._id} blog={blog}></AllBlog>
         ))}
