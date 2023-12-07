@@ -10,9 +10,8 @@ export default {
         inter: "'Inter', sans-serif",
       },
     colors: {
-      // primary: '#00598d',
-      primary: '#044E98',
-      secondary: "#5e8dbc",
+      primary: '#B24400',
+      secondary: "#ff6200",
       dark: '#333333',
     },
 

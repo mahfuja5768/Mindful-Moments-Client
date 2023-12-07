@@ -56,12 +56,6 @@ const RecentBlogs = () => {
             isLoading={isLoading}
             blogs={blogs}
           ></RecentBlogCards>
-          <div className="flex md:justify-center my-6">
-            <Link to="/all-blogs">
-              {" "}
-              <CustomButton text={"See All "} />{" "}
-            </Link>
-          </div>
         </div>
         <div className="lg:col-span-1 shadow-xl py-12 px-6">
           <h2 className="text-2xl font-bold border-b-4 border-primary  pb-2">

@@ -29,21 +29,21 @@ const LikedBlog = ({ blog }) => {
             <h3 className="flex items-center gap-2">
               {" "}
               <span>
-                <FaUser className="text-primary" />
+                <FaUser className="text-secondary" />
               </span>
               <span>{author}</span>
             </h3>
             <h3 className="flex items-center gap-2">
               {" "}
               <span>
-                <FaCalendarDays className="text-primary" />
+                <FaCalendarDays className="text-secondary" />
               </span>
               <span>{date}</span>
             </h3>
             <h3 className="flex items-center gap-2">
               {" "}
               <span>
-                <FaHeart className="text-red-600" />
+                <FaHeart className="text-secondary" />
               </span>
               <span>{likedCount}</span>
             </h3>

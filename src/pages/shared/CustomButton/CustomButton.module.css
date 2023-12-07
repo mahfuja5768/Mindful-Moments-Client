@@ -8,17 +8,17 @@
   padding: 10px 15px;
   font-size: 17px;
   font-weight: bold;
-  border: 1px solid #044E98;
+  border: 1px solid #ff6200;
   margin-top: 25px;
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
-  box-shadow: 0 50px #044E98 inset;
+  box-shadow: 0 50px #ff6200 inset;
   color: #fff;
 
   &:hover {
-    box-shadow:   #044E98 inset 0 0;
-    color: #044E98;
+    box-shadow:   #ff6200 inset 0 0;
+    color: #ff6200;
   }
 
   &:focus {
