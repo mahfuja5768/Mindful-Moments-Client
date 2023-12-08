@@ -86,7 +86,7 @@ const AllBlog = ({ blog }) => {
           </div>
           <div className="flex md:justify-between mt-6 gap-5">
             <Link onClick={() => handleToWishlist(_id)}>
-              <CustomButton text=" Add to wishlist"></CustomButton>
+              <CustomButton text=" Bookmark"></CustomButton>
             </Link>
             <Link to={`/blog-details/${_id}`}>
               <CustomButton text=" Read More"></CustomButton>

@@ -37,7 +37,7 @@ const Wishlists = () => {
 
   return (
     <Container>
-      <SectionTitle heading={"Welcome To Your Wishlist"}></SectionTitle>
+      <SectionTitle heading={"Your Bookmarks"}></SectionTitle>
       <div className="py-12 my-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2  gap-8">
         {blogs?.map((item) => (
           <div key={item._id}>

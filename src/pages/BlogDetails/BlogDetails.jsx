@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Container from "../shared/Container/Container";
 import { FaCalendarDays, FaHeart, FaUser } from "react-icons/fa6";
 import SectionTitle from "../shared/SectionTitle/SectionTitle";
@@ -28,6 +28,8 @@ const BlogDetails = () => {
     topics,
   } = blog;
 
+  const navigate = useNavigate();
+  const location = useLocation();
   const [allComments, refetch] = useComments();
   const [comments, setComments] = useState([]);
   console.log(allComments);
@@ -65,7 +67,21 @@ const BlogDetails = () => {
   };
 
   const handleAddReview = () => {
-    setDisable(false);
+    if (user && user.email) {
+      setDisable(false);
+    } else {
+      Swal.fire({
+        title: "Error!",
+        text: "Sorry you have to login, for add comment!",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonText: "Yes, login!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login", { state: { from: location } });
+        }
+      });
+    }
   };
 
   return (

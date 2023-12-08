@@ -36,7 +36,7 @@ const Navbar = () => {
               : "bg-transparent hover:text-white hover:bg-transparent"
           }
         >
-         Add Blogs
+          Add Blogs
         </NavLink>
       </li>
       <li>
@@ -48,7 +48,7 @@ const Navbar = () => {
               : "bg-transparent hover:text-white hover:bg-transparent"
           }
         >
-         Featured Blogs
+          Featured Blogs
         </NavLink>
       </li>
       <li>
@@ -60,7 +60,7 @@ const Navbar = () => {
               : "bg-transparent hover:text-white hover:bg-transparent"
           }
         >
-         Wishlist
+          Bookmark
         </NavLink>
       </li>
     </>
