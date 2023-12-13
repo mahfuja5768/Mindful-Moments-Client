@@ -12,6 +12,7 @@ import AddNewBlog from "../pages/AddNewBlog/AddNewBlog";
 import PrivateRoute from "./PrivateRoute";
 import UpdateBlog from "../pages/BlogDetails/UpdateBlog";
 import FeaturedBlogs from "../pages/FeaturedBlogs/FeaturedBlogs";
+import UsersArchive from "../pages/UsersArchive/UsersArchive";
 
 export const router = createBrowserRouter([
   {
@@ -27,12 +28,12 @@ export const router = createBrowserRouter([
         element: <AllBlogs></AllBlogs>,
       },
       {
+        path: "/userArchive",
+        element: <UsersArchive></UsersArchive>
+      },
+      {
         path: "/blog-details/:id",
-        element: (
-          <PrivateRoute>
-            <BlogDetails></BlogDetails>
-          </PrivateRoute>
-        ),
+        element: <BlogDetails></BlogDetails>,
         loader: ({ params }) => getSingleBlogs(params.id),
       },
       {
@@ -54,11 +55,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/featured-blogs",
-        element: (
-          <PrivateRoute>
-            <FeaturedBlogs />
-          </PrivateRoute>
-        ),
+        element: <FeaturedBlogs />,
       },
       {
         path: "updateBlog/:id",

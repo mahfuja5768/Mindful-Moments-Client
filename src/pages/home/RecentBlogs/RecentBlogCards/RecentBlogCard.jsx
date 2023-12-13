@@ -6,8 +6,8 @@ import Swal from "sweetalert2";
 import useAuth from "../../../../components/hooks/useAuth";
 
 const RecentBlogCard = ({ blog }) => {
-  // console.log(blog);
-  const { author, date, image, likedCount, topics, title, _id } = blog;
+  console.log(blog);
+  const { author, date, image, likedCount, email,topics, title, _id } = blog;
   const navigate = useNavigate();
   const location = useLocation();
   const { user } = useAuth();
@@ -42,7 +42,10 @@ const RecentBlogCard = ({ blog }) => {
         showCancelButton: true,
         confirmButtonText: "Yes, login!",
       }).then((result) => {
+<<<<<<< HEAD
         console.log(result);
+=======
+>>>>>>> bf8cfadd18984835ce565c43391a6bd59b382a22
         if (result.isConfirmed) {
           navigate("/login", { state: { from: location } });
         }
@@ -73,13 +76,18 @@ const RecentBlogCard = ({ blog }) => {
           <h2 className="text-3xl font-bold ">{title}</h2>
           <p className="my-5 text-2xl font-medium">Topics: {topics}</p>
           <div className="flex justify-between items-center gap-2">
-            <Link className="cursor-pointer text-secondary hover:text-primary"><h3 className="flex items-center gap-2">
-              {" "}
-              <span>
-                <FaUser className="text-secondary" />
-              </span>
-              <span>{author}</span>
-            </h3></Link>
+            <Link
+              to={`/userArchive/${email}`}
+              className="cursor-pointer text-secondary hover:text-primary"
+            >
+              <h3 className="flex items-center gap-2">
+                {" "}
+                <span>
+                  <FaUser className="text-secondary" />
+                </span>
+                <span>{author}</span>
+              </h3>
+            </Link>
             <h3 className="flex items-center gap-2">
               {" "}
               <span>
@@ -97,7 +105,7 @@ const RecentBlogCard = ({ blog }) => {
           </div>
           <div className="flex md:justify-between mt-6 gap-5">
             <Link onClick={() => handleToWishlist(_id)}>
-              <CustomButton text=" Add to wishlist"></CustomButton>
+              <CustomButton text=" Bookmark"></CustomButton>
             </Link>
             <Link to={`/blog-details/${_id}`}>
               <CustomButton text=" Read More"></CustomButton>

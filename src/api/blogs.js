@@ -16,7 +16,7 @@ export const getAllBlogs = async () => {
   return data;
 };
 export const getSingleBlogs = async (id) => {
-  const { data } = await axiosSecure(`/get-single-blog/${id}`);
+  const { data } = await axiosPublic(`/get-single-blog/${id}`);
 //   console.log(data)
   return data;
 };
@@ -45,5 +45,12 @@ export const addNewBlog = async (blog) => {
 export const addReview = async (review) => {
   const { data } = await axiosSecure.post("/reviews", review);
   //   console.log(data)
+  return data;
+};
+
+//get users added blogs
+export const getUsersBlogs = async () => {
+  const { data } = await axiosPublic.get("/get-added-blogs");
+//   console.log(data)
   return data;
 };
