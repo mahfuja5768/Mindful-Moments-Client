@@ -15,6 +15,7 @@ export const getAllBlogs = async () => {
 //   console.log(data)
   return data;
 };
+
 export const getSingleBlogs = async (id) => {
   const { data } = await axiosPublic(`/get-single-blog/${id}`);
 //   console.log(data)

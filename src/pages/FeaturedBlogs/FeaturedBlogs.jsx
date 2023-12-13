@@ -36,12 +36,12 @@ const FeaturedBlogs = () => {
 
   return (
     <Container>
-      <SectionTitle heading={"Manage Properties"}></SectionTitle>
+      <SectionTitle heading={"Featured Blogs"}></SectionTitle>
       <div className="overflow-x-auto my-12">
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="text-lg  bg-[#f7f7f7] border-y-4 border-[#276597] text-primary">
+            <tr className="text-lg  bg-[#f7f7f7] border-y-4 border-primary text-primary">
               <th></th>
               <th>Blog Image</th>
               <th>Blog Title</th>
