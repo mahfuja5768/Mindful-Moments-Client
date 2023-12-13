@@ -42,7 +42,11 @@ const RecentBlogCard = ({ blog }) => {
         showCancelButton: true,
         confirmButtonText: "Yes, login!",
       }).then((result) => {
-        navigate("/login", { state: { from: location } })})
+        console.log(result);
+        if (result.isConfirmed) {
+          navigate("/login", { state: { from: location } });
+        }
+      });
     }
   };
 
