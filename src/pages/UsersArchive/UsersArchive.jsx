@@ -7,7 +7,7 @@ const UsersArchive = () => {
     const axiosPublic = useAxiosPublic();
     const { user } = useAuth();
     const { data: blogs = [] } = useQuery({
-      queryKey: ["blogs", user?.email],
+      queryKey: ["blogs"],
       queryFn: async () => {
         const res = await axiosPublic.get(
           `/wishlist-blogs?email=${user?.email}`
